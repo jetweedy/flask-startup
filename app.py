@@ -16,10 +16,8 @@ def greet():
 # POST route with JSON body
 @app.route('/echo', methods=['POST'])
 def echo():
-    data = request.get_json()
-    return jsonify({
-        "you_sent": data
-    })
+    form_data = request.form.to_dict()
+    return jsonify(form_data)
 
 # POST route with form data
 @app.route('/submit-form', methods=['POST'])
@@ -29,4 +27,4 @@ def submit_form():
     return f"Received form submission: {name}, {email}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
