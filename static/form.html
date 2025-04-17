@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Contact Form</h1>
-  <form action="/echo" method="post" enctype="application/json">
+  <form action="/echo" method="post">
   <!--
   <form action="/submit-form" method="post">
   -->
@@ -15,6 +15,18 @@
 
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" required><br><br>
+
+    <label for="cbs">Checkboxes</label><br />
+    <input type="checkbox" name="cbs" value="cb1" /> Checkbox 1<br />
+    <input type="checkbox" name="cbs" value="cb2" /> Checkbox 2<br />
+    <input type="checkbox" name="cbs" value="cb3" /> Checkbox 3<br />
+    <br />
+
+    <label for="rads">Radios</label><br />
+    <input type="radio" name="rads" value="rad1" /> Radio 1<br />
+    <input type="radio" name="rads" value="rad2" /> Radio 2<br />
+    <input type="radio" name="rads" value="rad3" /> Radio 3<br />
+    <br />
 
     <button type="submit">Submit</button>
   </form>

@@ -16,8 +16,9 @@ def greet():
 # POST route with JSON body
 @app.route('/echo', methods=['POST'])
 def echo():
-    form_data = request.form.to_dict()
-    return jsonify(form_data)
+    # This is shorthand for grabbing all the keys and values in request.form and putting them into data:
+    data = {key: request.form.getlist(key) for key in request.form.keys()}
+    return (data)
 
 # POST route with form data
 @app.route('/submit-form', methods=['POST'])
